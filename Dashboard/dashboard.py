@@ -8,10 +8,10 @@ st.set_page_config(page_title="Bike Sharing Analysis", layout="wide")
 st.sidebar.header("Dashboard Controls")
 option = st.sidebar.selectbox("Select a category:", ["Overview", "Data", "Visualization"])
 
-day_df = pd.read_csv("day_data_clean.csv")
+day_df = pd.read_csv("dashboard/day_data_clean.csv")
 day_df['weekly_avg'] = day_df['cnt'].rolling(7).mean()
 
-hour_df = pd.read_csv("hour_data_clean.csv")
+hour_df = pd.read_csv("dashboard/hour_data_clean.csv")
 hourly_rentals = hour_df.groupby("hr")["cnt"].sum()
 
 # Main Content
